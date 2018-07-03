@@ -1,3 +1,45 @@
 baseURL = "http://localhost:1313/"
 languageCode = "ja"
 title = "Goolge Cloud Platformの導入ならgrasys(グラシス)"
+theme = "grasys"
+
+[menu]
+# main menu
+
+[[menu.main]]
+	name   = "Service"
+	url    = "/service"
+	weight = 1
+
+[[menu.main]]
+	name   = "Case"
+	url    = "/case"
+	weight = 2
+
+[[menu.main]]
+	name   = "Faq"
+	url    = "/faq"
+	weight = 3
+
+[[menu.main]]
+	name   = "Member"
+	url    = "/Member"
+	weight = 4
+
+[[menu.main]]
+	name   = "Recruit"
+	url    = "/recruit"
+	weight = 5
+
+[[menu.main]]
+	name   = "Blog"
+	url    = "/blog"
+	weight = 6
+
+[[menu.main]]
+	name   = "Contact"
+	url    = "/contact"
+	weight = 7
+
+[param.carousel]
+	enable = true
