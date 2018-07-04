@@ -41,5 +41,25 @@ theme = "grasys"
 	url    = "/contact"
 	weight = 7
 
-[param.carousel]
+
+[params.carousel]
 	enable = true
+
+[params.ourservice]
+	enable = true
+	title = "OUR SERVICE"
+	subtitle = "Google Cloud Platform(GCP)の導入から運用、お客様それぞれのニーズに合わせたご要望にもお応えできます。"
+
+[params.case]
+	enable = true
+	title = "CASE"
+	subtitle = "導入事例をご紹介いたします。grasysのサービスをご利用いただいている企業様のお話を伺いました。"
+
+[params.whoweare]
+	enable = true
+	title = "WHO WE ARE"
+
+[params.recent_posts]
+	enable = true
+	title = "BLOG"
+    subtitle = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo."
