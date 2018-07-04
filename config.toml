@@ -42,6 +42,42 @@ theme = "grasys"
 	weight = 7
 
 
+[[menu.nofix]]
+	name   = "SERVICE"
+	url    = "/service"
+	weight = 1
+
+[[menu.nofix]]
+	name   = "CASE"
+	url    = "/case"
+	weight = 2
+
+[[menu.nofix]]
+	name   = "FAQ"
+	url    = "/faq"
+	weight = 3
+
+[[menu.nofix]]
+	name   = "MEMBER"
+	url    = "/Member"
+	weight = 4
+
+[[menu.nofix]]
+	name   = "RECRUIT"
+	url    = "/recruit"
+	weight = 5
+
+[[menu.nofix]]
+	name   = "BLOG"
+	url    = "/blog"
+	weight = 6
+
+[[menu.nofix]]
+	name   = "CONTACT"
+	url    = "/contact"
+	weight = 7
+
+
 [params.carousel]
 	enable = true
 
