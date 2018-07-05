@@ -77,6 +77,9 @@ theme = "grasys"
 	url    = "/contact"
 	weight = 7
 
+[params]
+	defaultKeywords = ["grasys", "グラシス", "gcp", "google cloud platform"]
+	copyright = "© grasys Inc. All Rights Reserved."
 
 [params.carousel]
 	enable = true
@@ -84,12 +87,12 @@ theme = "grasys"
 [params.ourservice]
 	enable = true
 	title = "OUR SERVICE"
-	subtitle = "Google Cloud Platform(GCP)の導入から運用、お客様それぞれのニーズに合わせたご要望にもお応えできます。"
+	subtitle = "Google Cloud Platform(GCP)の導入から運用、<br>お客様それぞれのニーズに合わせたご要望にもお応えできます。"
 
 [params.case]
 	enable = true
 	title = "CASE"
-	subtitle = "導入事例をご紹介いたします。grasysのサービスをご利用いただいている企業様のお話を伺いました。"
+	subtitle = "導入事例をご紹介いたします。<br>grasysのサービスをご利用いただいている企業様のお話を伺いました。"
 
 [params.whoweare]
 	enable = true
