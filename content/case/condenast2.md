@@ -1,10 +1,10 @@
 +++
 title = "タイトルテキストタイトルテキストタイトルテキストタイトルテキストタイトルテキストタイトルテキストタイトルテキスト"
-date = "2018-07-25"
+date = "2018-07-20"
 company = "株式会社コンデナストジャパン"
 banner = "/img/case-img01.jpg"
 caption = "写真左から【合同会社コンデナスト・ジャパン】バックエンド・エンジニア 上田 拓真氏、CTO 仁礼 英銘氏、バックエンド・エンジニア 井上 貴弘氏、バックエンド・エンジニア 安井 愛氏　【株式会社grasys】代表取締役 長谷川 祐介"
-comlogo = "img/condenast_logo.png"
+comlogo = "/img/condenast_logo.png"
 serviceLogo1 = "/img/condenast_logo1.png"
 serviceLogo2 = "/img/condenast_logo2.png"
 serviceLogo3 = ""

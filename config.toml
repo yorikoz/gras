@@ -81,6 +81,11 @@ theme = "grasys"
 	defaultKeywords = ["grasys", "グラシス", "gcp", "google cloud platform"]
 	copyright = "© grasys Inc. All Rights Reserved."
 
+[params.widgets]
+    categories = true
+    tags = true
+    search = true
+
 [params.carousel]
 	enable = true
 
