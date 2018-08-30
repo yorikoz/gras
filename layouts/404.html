@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+  {{ partial "head.html" . }}
+
+  <body>
+
+    <div id="all">
+
+        <header>
+
+          {{ partial "nofix.html" . }}
+
+          {{ partial "nav.html" . }}
+
+        </header>
+        <div id="content">
+
+        <div class="fv">
+
+              <div id="heading-breadcrumbs">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-md-12">
+                            <img src="/img/404.png" alt="{{ .Title }}">
+                            <h2>Not found</h2>
+                              <h1>お探しのページは見つかりませんでしたァッ！！！</h1>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+        </div>
+
+        <div class="container notfound">
+          <h3 class="stl">404 not found.</h3>
+          <h2 class="bgIcon">
+              <img src="/img/404_01.png" alt="notfound">
+              <span>お探しのページは見つかりませんでした</span>
+          </h2>
+          <a href="./" class="grnBtn">Topにもどる</a>
+
+          <p>ご指定のアドレス（URL）が正しく入力されている場合は、ページが移動した可能性があります。</p>
+          <p>ご利用頻度の高いページをご案内いたしますので、こちらからご覧ください。</p>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+            <h3 class="stl">Our services</h3>
+                    <!-- *** ourservice CAROUSEL *** -->
+                <div class="col-md-12">
+                    <ul class="owl-carousel ourservice same-height-row">
+                        {{ range .Site.Data.ourservice }}
+                        <li class="item">
+                            <div class="testimonial same-height-always">
+                                <div class="text">
+                                    <p><img class="" alt="" src="{{ .icon | absURL }}"></p>
+                                </div>
+                                <div class="bottom">
+                                    <div class="name-picture">
+                                        <h5>{{ .name }}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        {{ end }}
+                    </ul>
+                    <!-- /.owl-carousel -->
+
+                    <!-- *** ourservice CAROUSEL END *** -->
+                </div>
+
+            </div>
+        </div>
+
+        <div class="notBlog container">
+          <h3 class="stl">Latest Entry</h3>
+        {{ $posts := .Paginate (where .Data.Pages "Type" "blog") }}
+        <ul class="notList">
+           {{ range first 4 $posts.Pages }}
+          <li>
+            <div class="latestBlogImg">
+                <a href="{{ .Permalink }}">
+                {{ if .Params.banner }}
+                <img src="{{ .Site.BaseURL}}{{ .Params.banner }}" class="" alt="" >
+                {{ else }}
+                <img src="{{ .Site.BaseURL}}img/placeholder.png" class="" alt="" >
+                {{ end }}
+                </a>
+            </div>
+            <div class="latestBlogDetail">
+                <span>{{ .Date.Format "2006 1. 1" }}</span>
+                <span class="blogcategory">
+                  {{ if isset .Params "categories" }}
+                  <a href="{{ $.Site.BaseURL }}categories/{{ index .Params.categories 0 | urlize | lower }}">{{ index .Params.categories 0 }}</a>
+                  {{ end }}
+                </span>
+              <h3>{{ .Title }}</h3>
+            </div>
+          </li>
+          {{ end }}
+        </ul>
+        <a href="" class="grnBtn">View All</a>
+        </div>
+         {{ partial "bottom_contact.html" . }}
+
+        {{ partial "footer.html" . }}
+        </div>
+    </div>
+    <!-- /#all -->
+
+    {{ partial "scripts.html" . }}
+
+  </body>
+</html>

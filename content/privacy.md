@@ -2,8 +2,17 @@
 title = "プライバシーポリシー"
 subtitle = "Privacy policy"
 banner = "/img/privacy.png"
+slug = "privacy"
 inTitle = true
 +++
+
+{{< stl_h3 >}}
+Privacy policy
+{{< /stl_h3 >}}
+
+{{< bgicon_h2 01 >}}
+個人情報保護方針
+{{< /bgicon_h2 >}}
 
 株式会社grasys（以下「当社」といいます）は、個人情報の適切な取り扱いを徹底するため、次のとおりプライバシーポリシーを定めます。
 

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+  {{ partial "head.html" . }}
+
+  <body>
+
+    <div id="all">
+
+        <header>
+
+          {{ partial "nofix.html" . }}
+
+          {{ partial "nav.html" . }}
+
+        </header>
+
+        <div id="content">
+
+        <div class="fv">
+
+              <div id="heading-breadcrumbs">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-md-12">
+                            <img src="/img/blog.png" alt="{{ .Title }}">
+                            <h2>Blog</h2>
+                              <h1>{{ .Title }}</h1>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+        </div>
+
+            <div class="blogCate">
+                <ul>
+                    <li>
+                        <a href="/catecories/googlecloudplatform">Google Cloud Platform</a>
+                    </li>
+                    <li>
+                        <a href="/catecories/networksecurity">ネットワークセキュリティ</a>
+                    </li>
+
+                    <li>
+                        <a href="/catecories/cloudserver">クラウドサーバー</a>
+                    </li>
+                    <li>
+                        <a href="/catecories/engineerblog">エンジニアブログ</a>
+                    </li>
+                    <li>
+                        <a href="/catecories/news">ニュース</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="container">
+            {{ if isset .Params "id" }}
+
+              {{ partial .Params.id . }}
+
+            {{ else }}
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <div id="bloglist">
+
+                            <div class="row">
+                                    <section>
+
+                                        <ul class="mainList">
+                                         {{ $paginator := .Paginate (where .Data.Pages "Type" "blog") }}
+                                         {{ range $paginator.Pages }}
+                                        <li>
+                                            <div class="blogInfoBlock">
+                                                <div class="blogBann">
+                                                    <a href="{{ .Permalink }}">
+                                                    {{ if .Params.banner }}
+                                                    <img src="{{ .Site.BaseURL}}{{ .Params.banner }}" class="" alt="" >
+                                                    {{ else }}
+                                                    <img src="{{ .Site.BaseURL}}img/placeholder.png" class="" alt="" >
+                                                    {{ end }}
+                                                    </a>
+                                                </div>
+                                                <div class="blogDesc">
+                                                    <span class="blogdate">{{ dateFormat "2006 1. 1" .Params.date }}</span>
+                                                    <span class="blogcategory">
+                                                      {{ if isset .Params "categories" }}
+                                                      <a href="{{ $.Site.BaseURL }}categories/{{ index .Params.categories 0 | urlize | lower }}">{{ index .Params.categories 0 }}</a>
+                                                      {{ end }}
+                                                    </span>
+                                                    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+                                                    {{ with .Params.tags }}
+                                                      <ul class="tags">
+                                                        {{- range . -}}
+                                                          <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+                                                        {{- end -}}
+                                                      </ul>
+                                                    {{ end }}
+                                                </div>
+                                            </div>
+                                            <p class="blogcmt">{{ .Summary }}......</p>
+                                        </li>
+                                        {{ end }}
+
+                                        </ul>
+                                        <div class="pager">
+                                            {{ template "_internal/pagination.html" . }}
+                                        </div>
+                                    </section>
+
+                                </div>
+
+                            </div>
+                            <!-- /.row -->
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container -->
+
+            {{ end }}
+            {{ partial "bottom_contact.html" . }}
+
+        </div>
+        <!-- /#content -->
+
+        {{ partial "footer.html" . }}
+
+    </div>
+    <!-- /#all -->
+
+    {{ partial "scripts.html" . }}
+
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+  {{ partial "head.html" . }}
+
+  <body>
+
+    <div id="all">
+
+        <header>
+
+          {{ partial "nofix.html" . }}
+
+          {{ partial "nav.html" . }}
+
+        </header>
+        <div class="fv">
+
+              <div id="heading-breadcrumbs">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-md-12">
+                            <img src="/img/blog.png" alt="{{ .Title }}">
+                            <h2>Blog</h2>
+                              <h1>ブログ</h1>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+        </div>
+            <div class="blogCate">
+                <ul>
+                    <li>
+                        <a href="/categories/googlecloudplatform">Google Cloud Platform</a>
+                    </li>
+                    <li>
+                        <a href="/categories/networksecurity">ネットワークセキュリティ</a>
+                    </li>
+
+                    <li>
+                        <a href="/categories/cloudserver">クラウドサーバー</a>
+                    </li>
+                    <li>
+                        <a href="/categories/engineerblog">エンジニアブログ</a>
+                    </li>
+                    <li>
+                        <a href="/categories/news">ニュース</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="container">
+                {{ with .Params.categories }}
+                  <ul class="blogcategories">
+                    {{- range . -}}
+                      <li><a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+                    {{- end -}}
+                  </ul>
+                {{ end }}
+             <div id="{{ .File.BaseFileName }}" class="blogWrap">
+                <div class="bloginner">
+
+                <div class="bloginfo">
+                  <span class="date">{{ dateFormat "2006 1. 1" .Params.date }}</span>
+                  <h1>{{ .Title }}</h1>
+                  {{ with .Params.tags }}
+                    <ul class="tags">
+                      {{- range . -}}
+                        <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+                      {{- end -}}
+                    </ul>
+                  {{ end }}
+                </div>
+                <div class="blogContent">
+                      {{ .Content }}
+                </div>
+                  {{ with .Params.tags }}
+                    <ul class="tags">
+                      {{- range . -}}
+                        <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+                      {{- end -}}
+                    </ul>
+                  {{ end }}
+             </div>
+                <!-- /.bloginner -->
+            </div>
+            </div>
+            <!-- /.container -->
+
+
+            {{ partial "bottom_contact.html" . }}
+        </div>
+
+        <!-- /#content -->
+
+        {{ partial "footer.html" . }}
+
+    </div>
+    <!-- /#all -->
+
+    {{ partial "scripts.html" . }}
+
+  </body>
+</html>
